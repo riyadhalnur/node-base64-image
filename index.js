@@ -1,10 +1,11 @@
 'use strict';
 
 var request = require('request');
+var fs = require('fs');
 
 var base64encoder = function (url, options, callback) {
-
   options = options || {};
+
   if (typeof callback !== 'function') {
     throw new Error('Callback needs to be a function!');
   }
@@ -30,6 +31,18 @@ var base64encoder = function (url, options, callback) {
   });
 };
 
+var base64decoder = function (imageBuffer, options, callback) {
+  options = options || {};
+
+  if (options && options.filename) {
+    fs.writeFile(options.filename + '.jpg', imageBuffer, 'base64', function (err) {
+      if (err) { return callback(err); }
+      return callback(null, 'Image saved successfully to disk!');
+    });
+  }
+};
+
 module.exports = {
-  base64encoder: base64encoder
+  base64encoder: base64encoder,
+  base64decoder: base64decoder
 };
