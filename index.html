@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Node-base64-image by riyadhalnur</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Node-base64-image</h1>
+        <p>Download images from remote URLs and encode/decode them to base64</p>
+
+        <p class="view"><a href="https://github.com/riyadhalnur/node-base64-image">View the Project on GitHub <small>riyadhalnur/node-base64-image</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/riyadhalnur/node-base64-image/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/riyadhalnur/node-base64-image/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/riyadhalnur/node-base64-image">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><a href="https://travis-ci.org/riyadhalnur/node-base64-image"><img src="https://travis-ci.org/riyadhalnur/node-base64-image.svg?branch=master" alt="Build Status"></a>  </p>
+
+<h1>
+<a id="node-base64-image" class="anchor" href="#node-base64-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>node-base64-image</h1>
+
+<p>Download images from remote URLs and encode/decode them to base64</p>
+
+<p>To install<br>
+<code>npm install node-base64-image --save</code>  </p>
+
+<p>To run tests<br>
+<code>npm test</code>  </p>
+
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<p>Require the library in your .js file<br>
+<code>var base64 = require('node-base64-image');</code>  </p>
+
+<h4>
+<a id="download-and-encode-an-image" class="anchor" href="#download-and-encode-an-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download and encode an image</h4>
+
+<pre><code>var options = {string: true}  
+
+base64.base64encode('www.someurl.com/image.jpg', function (err, image) {  
+    if (err) { console.log(err); }  
+    console.log(image);  
+});  
+</code></pre>
+
+<h5>
+<a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h5>
+
+<p>url (string) - the url of the image to be downloaded and encoded.
+options (object) - if string is passed is with 'true', the image returned will be a base64 string. Otherwise, the base64 buffer is returned.<br>
+callback (function) - the callback will contain the err object and the encoded image object.  </p>
+
+<h4>
+<a id="decode-and-write-a-base64-encoded-image-to-disk" class="anchor" href="#decode-and-write-a-base64-encoded-image-to-disk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decode and write a base64 encoded image to disk</h4>
+
+<pre><code>var options = {filename: 'test'}; 
+var imageData = new Buffer('/9j/4AAQSkZJRgABAQAAAQABAAD...', 'base64'); 
+
+base64.base64decode(imageData, options, function (err, saved) {
+    if (err) { console.log(err); }  
+    console.log(saved);    
+});  
+</code></pre>
+
+<h5>
+<a id="paramaters" class="anchor" href="#paramaters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Paramaters</h5>
+
+<p>imageData (buffer) - the base64 image buffer.<br>
+options (object) - contains the 'filename' property; this will be the written image file.<br>
+callback (function) - the callback will contain the err object and the 'successful save' string. </p>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h3>
+
+<p>This library is licensed under the GPL v3.0 license.  </p>
+
+<h3>
+<a id="issues" class="anchor" href="#issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues</h3>
+
+<p>Report a bug in the issues.   </p>
+
+<p>Lovingly crafted in Dhaka, Bangladesh by <a href="http://blog.verticalaxisbd.com">Riyadh Al Nur</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/riyadhalnur">riyadhalnur</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-57631761-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
