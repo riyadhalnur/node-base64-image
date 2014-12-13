@@ -1,0 +1,35 @@
+{
+  "name": "nkde-base64-image",
+  "version": "0.0.1",
+  "description": "Download images from remote URLs and encode/decode them to base64",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/tests.js"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "repository": "https://github.com/riyadhalnur/node-base64-image",
+  "homepage": "http://riyadhalnur.github.io/node-base64-image/",
+  "keywords": [
+    "image",
+    "download",
+    "base64",
+    "encode",
+    "decode",
+    "javascript",
+    "node"
+  ],
+  "bugs": {
+    "url": "https://github.com/riyadhalnur/node-base64-image/issuess"
+  },
+  "author": "Riyadh Al Nur <riyadhalnur@verticalaxisbd.com> (http://blog.verticalaxisbd.com)",
+  "license": "GPLv3",
+  "dependencies": {
+    "request": "^2.51.x"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.x",
+    "should": "^4.3.x"
+  }
+}
