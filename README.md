@@ -36,7 +36,7 @@ callback (function) - the callback will contain the err object and the encoded i
 var options = {filename: 'test'}; 
 var imageData = new Buffer('/9j/4AAQSkZJRgABAQAAAQABAAD...', 'base64'); 
 
-base64.base64decode(imageData, options, function (err, saved) {
+base64.base64decoder(imageData, options, function (err, saved) {
     if (err) { console.log(err); }  
     console.log(saved);    
 });  
