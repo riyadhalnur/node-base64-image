@@ -17,13 +17,15 @@ Require the library in your .js file
 `var base64 = require('node-base64-image');`  
 
 #### Download and encode an image  
-```  
-var options = {string: true}  
+```
+var options = {string: true};
 
-base64.base64encode('www.someurl.com/image.jpg', function (err, image) {  
-    if (err) { console.log(err); }  
-    console.log(image);  
-});  
+base64.base64encoder('www.someurl.com/image.jpg', options, function (err, image) {
+    if (err) {
+		console.log(err);
+	}
+    console.log(image);
+});
 ```
 
 ##### Parameters  
