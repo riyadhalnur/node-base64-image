@@ -3,7 +3,7 @@
 node-base64-image
 =================
 
-Download images from remote URLs and encode/decode them to base64
+Download images from remote URLs or use local images and encode/decode them to base64
 
 To install  
 `npm install node-base64-image --save`  
@@ -26,9 +26,22 @@ base64.base64encode('www.someurl.com/image.jpg', function (err, image) {
 });  
 ```
 
+#### Encode a local image  
+```  
+var path = __dirname + '/../test.jpg',
+          options = {localFile: true, string: true}; 
+
+base64.base64encode(path, function (err, image) {  
+    if (err) { console.log(err); }  
+    console.log(image);  
+});  
+```
+
+
 ##### Parameters  
 url (string) - the url of the image to be downloaded and encoded.
 options (object) - if string is passed is with 'true', the image returned will be a base64 string. Otherwise, the base64 buffer is returned.  
+                 if localFile is passed is with 'true', a local image instead of a remote one will be used  
 callback (function) - the callback will contain the err object and the encoded image object.  
 
 #### Decode and write a base64 encoded image to disk  
@@ -42,7 +55,7 @@ base64.base64decode(imageData, options, function (err, saved) {
 });  
 ```  
 
-##### Paramaters  
+##### Parameters  
 imageData (buffer) - the base64 image buffer.  
 options (object) - contains the 'filename' property; this will be the written image file.  
 callback (function) - the callback will contain the err object and the 'successful save' string. 
