@@ -63,6 +63,39 @@ describe('Image download and encode/decode to Base64', function () {
         done();
       });
     });
+
+    it('should use a local image and return base64 encoded Buffer', function (done) {
+      this.timeout(15000);
+
+      var path = __dirname + '/../test.jpg',
+          options = {localFile: true};
+
+      base64Image.base64encoder(path, options, function (err, image) {
+        should.not.exist(err);
+
+        image.should.exist;
+        image.should.be.an.instanceOf(Buffer);
+
+        done();
+      });
+    });
+
+    it('should use a local image and return base64 encoded string', function (done) {
+      this.timeout(15000);
+
+      var path = __dirname + '/../test.jpg',
+        options = {localFile: true, string: true};
+
+      base64Image.base64encoder(path, options, function (err, image) {
+        should.not.exist(err);
+
+        image.should.exist;
+        image.should.match(/^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/);
+
+        done();
+      });
+    });
+
   });
 
   describe('Base64 Decoder', function () {
