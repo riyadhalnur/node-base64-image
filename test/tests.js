@@ -67,7 +67,7 @@ describe('Image download and encode/decode to Base64', function () {
     it('should use a local image and return base64 encoded Buffer', function (done) {
       this.timeout(15000);
 
-      var path = __dirname + '/../test.jpg',
+      var path = __dirname + '/test.jpg',
           options = {localFile: true};
 
       base64Image.base64encoder(path, options, function (err, image) {
@@ -83,7 +83,7 @@ describe('Image download and encode/decode to Base64', function () {
     it('should use a local image and return base64 encoded string', function (done) {
       this.timeout(15000);
 
-      var path = __dirname + '/../test.jpg',
+      var path = __dirname + '/test.jpg',
         options = {localFile: true, string: true};
 
       base64Image.base64encoder(path, options, function (err, image) {
