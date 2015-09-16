@@ -28,18 +28,13 @@ var base64encoder = function (url, options, callback) {
 
   if (options && options.localFile === true) {
     fs.readFile(url, function (err, data) {
-      if (err) {
-        return callback(err);
-      }
+      if (err) { return callback(err); }
 
       return encoder(data, options);
     });
-  }
-  else {
+  } else {
     request({url: url, encoding: null}, function (err, res, body) {
-      if (err) {
-        return callback(err);
-      }
+      if (err) { return callback(err); }
 
       if (body && res.statusCode === 200) {
         return encoder(body, options);
@@ -54,9 +49,7 @@ var base64decoder = function (imageBuffer, options, callback) {
 
   if (options && options.filename) {
     fs.writeFile(options.filename + '.jpg', imageBuffer, 'base64', function (err) {
-      if (err) {
-        return callback(err);
-      }
+      if (err) { return callback(err); }
       return callback(null, 'Image saved successfully to disk!');
     });
   }
