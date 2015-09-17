@@ -1,6 +1,6 @@
 {
   "name": "node-base64-image",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Download images from remote URLs and encode/decode them to base64",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "url": "https://github.com/riyadhalnur/node-base64-image/issuess"
   },
   "author": "Riyadh Al Nur <riyadhalnur@verticalaxisbd.com> (http://blog.verticalaxisbd.com)",
-  "license": "GPLv3",
+  "license": "MIT",
   "dependencies": {
     "request": "^2.51.x"
   },

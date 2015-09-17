@@ -29,7 +29,7 @@ base64.base64encode('www.someurl.com/image.jpg', function (err, image) {
 #### Encode a local image  
 ```  
 var path = __dirname + '/../test.jpg',
-          options = {localFile: true, string: true}; 
+          options = {localFile: true, string: true};
 
 base64.base64encode(path, function (err, image) {  
     if (err) { console.log(err); }  
@@ -46,8 +46,8 @@ callback (function) - the callback will contain the err object and the encoded i
 
 #### Decode and write a base64 encoded image to disk  
 ```  
-var options = {filename: 'test'}; 
-var imageData = new Buffer('/9j/4AAQSkZJRgABAQAAAQABAAD...', 'base64'); 
+var options = {filename: 'test'};
+var imageData = new Buffer('/9j/4AAQSkZJRgABAQAAAQABAAD...', 'base64');
 
 base64.base64decoder(imageData, options, function (err, saved) {
     if (err) { console.log(err); }  
@@ -58,10 +58,10 @@ base64.base64decoder(imageData, options, function (err, saved) {
 ##### Parameters  
 imageData (buffer) - the base64 image buffer.  
 options (object) - contains the 'filename' property; this will be the written image file.  
-callback (function) - the callback will contain the err object and the 'successful save' string. 
+callback (function) - the callback will contain the err object and the 'successful save' string.
 
 ### License  
-This library is licensed under the GPL v3.0 license.  
+This library is licensed under the MIT license.  
 
 ### Issues  
 Report a bug in the issues.   
