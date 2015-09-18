@@ -1,39 +1,30 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Node-base64-image by riyadhalnur</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Node-base64-image</h1>
-        <p>Download images from remote URLs and encode/decode them to base64</p>
+    <section class="page-header">
+      <h1 class="project-name">Node-base64-image</h1>
+      <h2 class="project-tagline">Download images from remote URLs and encode/decode them to base64</h2>
+      <a href="https://github.com/riyadhalnur/node-base64-image" class="btn">View on GitHub</a>
+      <a href="https://github.com/riyadhalnur/node-base64-image/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/riyadhalnur/node-base64-image/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/riyadhalnur/node-base64-image">View the Project on GitHub <small>riyadhalnur/node-base64-image</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/riyadhalnur/node-base64-image/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/riyadhalnur/node-base64-image/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/riyadhalnur/node-base64-image">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <p><a href="https://travis-ci.org/riyadhalnur/node-base64-image"><img src="https://travis-ci.org/riyadhalnur/node-base64-image.svg?branch=master" alt="Build Status"></a>  </p>
+    <section class="main-content">
+      <p><a href="https://travis-ci.org/riyadhalnur/node-base64-image"><img src="https://travis-ci.org/riyadhalnur/node-base64-image.svg?branch=master" alt="Build Status"></a>  </p>
 
 <h1>
 <a id="node-base64-image" class="anchor" href="#node-base64-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>node-base64-image</h1>
 
-<p>Download images from remote URLs and encode/decode them to base64</p>
+<p>Download images from remote URLs or use local images and encode/decode them to base64</p>
 
 <p>To install<br>
 <code>npm install node-base64-image --save</code>  </p>
@@ -58,36 +49,49 @@ base64.base64encode('www.someurl.com/image.jpg', function (err, image) {
 });  
 </code></pre>
 
+<h4>
+<a id="encode-a-local-image" class="anchor" href="#encode-a-local-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Encode a local image</h4>
+
+<pre><code>var path = __dirname + '/../test.jpg',
+          options = {localFile: true, string: true};
+
+base64.base64encode(path, function (err, image) {  
+    if (err) { console.log(err); }  
+    console.log(image);  
+});  
+</code></pre>
+
 <h5>
 <a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h5>
 
 <p>url (string) - the url of the image to be downloaded and encoded.
 options (object) - if string is passed is with 'true', the image returned will be a base64 string. Otherwise, the base64 buffer is returned.<br>
+                 if localFile is passed is with 'true', a local image instead of a remote one will be used<br>
 callback (function) - the callback will contain the err object and the encoded image object.  </p>
 
 <h4>
 <a id="decode-and-write-a-base64-encoded-image-to-disk" class="anchor" href="#decode-and-write-a-base64-encoded-image-to-disk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decode and write a base64 encoded image to disk</h4>
 
-<pre><code>var options = {filename: 'test'}; 
-var imageData = new Buffer('/9j/4AAQSkZJRgABAQAAAQABAAD...', 'base64'); 
+<pre><code>var options = {filename: 'test'};
+var imageData = new Buffer('/9j/4AAQSkZJRgABAQAAAQABAAD...', 'base64');
 
-base64.base64decode(imageData, options, function (err, saved) {
+base64.base64decoder(imageData, options, function (err, saved) {
     if (err) { console.log(err); }  
     console.log(saved);    
 });  
 </code></pre>
 
 <h5>
-<a id="paramaters" class="anchor" href="#paramaters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Paramaters</h5>
+<a id="parameters-1" class="anchor" href="#parameters-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h5>
 
 <p>imageData (buffer) - the base64 image buffer.<br>
 options (object) - contains the 'filename' property; this will be the written image file.<br>
-callback (function) - the callback will contain the err object and the 'successful save' string. </p>
+callback (function) - the callback will contain the err object and the 'successful save' string.</p>
 
 <h3>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h3>
 
-<p>This library is licensed under the GPL v3.0 license.  </p>
+<p>This library is licensed under the MIT license.  </p>
 
 <h3>
 <a id="issues" class="anchor" href="#issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues</h3>
@@ -95,14 +99,16 @@ callback (function) - the callback will contain the err object and the 'successf
 <p>Report a bug in the issues.   </p>
 
 <p>Lovingly crafted in Dhaka, Bangladesh by <a href="http://blog.verticalaxisbd.com">Riyadh Al Nur</a></p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/riyadhalnur">riyadhalnur</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/riyadhalnur/node-base64-image">Node-base64-image</a> is maintained by <a href="https://github.com/riyadhalnur">riyadhalnur</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
+
+    </section>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
