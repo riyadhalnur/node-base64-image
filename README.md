@@ -22,8 +22,8 @@ var options = {string: true};
 
 base64.base64encoder('www.someurl.com/image.jpg', options, function (err, image) {
     if (err) {
-		console.log(err);
-	}
+        console.log(err);
+    }
     console.log(image);
 });
 ```
@@ -33,7 +33,7 @@ base64.base64encoder('www.someurl.com/image.jpg', options, function (err, image)
 var path = __dirname + '/../test.jpg',
           options = {localFile: true, string: true};
 
-base64.base64encode(path, function (err, image) {  
+base64.base64encoder(path, options, function (err, image) {  
     if (err) { console.log(err); }  
     console.log(image);  
 });  
@@ -41,10 +41,11 @@ base64.base64encode(path, function (err, image) {
 
 
 ##### Parameters  
-url (string) - the url of the image to be downloaded and encoded.
-options (object) - if string is passed is with 'true', the image returned will be a base64 string. Otherwise, the base64 buffer is returned.  
-                 if localFile is passed is with 'true', a local image instead of a remote one will be used  
-callback (function) - the callback will contain the err object and the encoded image object.  
+ - `url` (string) - the url of the image to be downloaded and encoded.
+ - `options` (object)
+ 	- if `string` is passed is with 'true', the image returned will be a base64 string. Otherwise, the base64 buffer is returned.  
+ 	- if `localFile` is passed is with 'true', a local image instead of a remote one will be used  
+ - `callback` (function) - the callback will contain the err object and the encoded image object.  
 
 #### Decode and write a base64 encoded image to disk  
 ```  
@@ -58,9 +59,9 @@ base64.base64decoder(imageData, options, function (err, saved) {
 ```  
 
 ##### Parameters  
-imageData (buffer) - the base64 image buffer.  
-options (object) - contains the 'filename' property; this will be the written image file.  
-callback (function) - the callback will contain the err object and the 'successful save' string.
+ - `imageData` (buffer) - the base64 image buffer.  
+ - `options` (object) - contains the 'filename' property; this will be the written image file.  
+ - `callback` (function) - the callback will contain the err object and the 'successful save' string.
 
 ### License  
 This library is licensed under the MIT license.  
