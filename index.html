@@ -41,12 +41,14 @@
 <h4>
 <a id="download-and-encode-an-image" class="anchor" href="#download-and-encode-an-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download and encode an image</h4>
 
-<pre><code>var options = {string: true}  
+<pre><code>var options = {string: true};
 
-base64.base64encode('www.someurl.com/image.jpg', function (err, image) {  
-    if (err) { console.log(err); }  
-    console.log(image);  
-});  
+base64.base64encoder('www.someurl.com/image.jpg', options, function (err, image) {
+    if (err) {
+        console.log(err);
+    }
+    console.log(image);
+});
 </code></pre>
 
 <h4>
@@ -55,7 +57,7 @@ base64.base64encode('www.someurl.com/image.jpg', function (err, image) {
 <pre><code>var path = __dirname + '/../test.jpg',
           options = {localFile: true, string: true};
 
-base64.base64encode(path, function (err, image) {  
+base64.base64encoder(path, options, function (err, image) {  
     if (err) { console.log(err); }  
     console.log(image);  
 });  
@@ -64,10 +66,23 @@ base64.base64encode(path, function (err, image) {
 <h5>
 <a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h5>
 
-<p>url (string) - the url of the image to be downloaded and encoded.
-options (object) - if string is passed is with 'true', the image returned will be a base64 string. Otherwise, the base64 buffer is returned.<br>
-                 if localFile is passed is with 'true', a local image instead of a remote one will be used<br>
-callback (function) - the callback will contain the err object and the encoded image object.  </p>
+<ul>
+<li>
+<code>url</code> (string) - the url of the image to be downloaded and encoded.</li>
+<li>
+<code>options</code> (object)
+
+<ul>
+<li>if <code>string</code> is passed is with 'true', the image returned will be a base64 string. Otherwise, the base64 buffer is returned.<br>
+</li>
+<li>if <code>localFile</code> is passed is with 'true', a local image instead of a remote one will be used<br>
+</li>
+</ul>
+</li>
+<li>
+<code>callback</code> (function) - the callback will contain the err object and the encoded image object.<br>
+</li>
+</ul>
 
 <h4>
 <a id="decode-and-write-a-base64-encoded-image-to-disk" class="anchor" href="#decode-and-write-a-base64-encoded-image-to-disk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decode and write a base64 encoded image to disk</h4>
@@ -84,9 +99,16 @@ base64.base64decoder(imageData, options, function (err, saved) {
 <h5>
 <a id="parameters-1" class="anchor" href="#parameters-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h5>
 
-<p>imageData (buffer) - the base64 image buffer.<br>
-options (object) - contains the 'filename' property; this will be the written image file.<br>
-callback (function) - the callback will contain the err object and the 'successful save' string.</p>
+<ul>
+<li>
+<code>imageData</code> (buffer) - the base64 image buffer.<br>
+</li>
+<li>
+<code>options</code> (object) - contains the 'filename' property; this will be the written image file.<br>
+</li>
+<li>
+<code>callback</code> (function) - the callback will contain the err object and the 'successful save' string.</li>
+</ul>
 
 <h3>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h3>
