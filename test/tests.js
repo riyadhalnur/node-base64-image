@@ -34,6 +34,18 @@ describe('Image download and encode/decode to Base64', function () {
       done();
     });
 
+    it('should report if image could not be loaded', function (done) {
+      var url = 'http://www.pctools.com/security-news/wp-content/uploads/2011/09/nonExisting404.jpg', options;
+
+      base64Image.base64encoder(url, options, function (err, image) {
+        err.should.exist;
+        should.not.exist(image);
+
+        done();
+      });
+
+    });
+
     it('should download an image and return base64 encoded Buffer', function (done) {
       this.timeout(15000);
 
@@ -48,6 +60,7 @@ describe('Image download and encode/decode to Base64', function () {
         done();
       });
     });
+
 
     it('should download an image and return base64 encoded string', function (done) {
       this.timeout(15000);
