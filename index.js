@@ -38,6 +38,9 @@ var base64encoder = function (url, options, callback) {
 
       if (body && res.statusCode === 200) {
         return encoder(body, options);
+      } else {
+        if (!body) { return callback('Image loading error - empty body'); }
+        else { return callback('Image loading error - ' + res.statusCode); }
       }
     });
   }
