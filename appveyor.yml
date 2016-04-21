@@ -1,0 +1,20 @@
+environment:
+  matrix:
+  - nodejs_version: "0.10"
+  - nodejs_version: "0.12"
+  - nodejs_version: "4"
+  - nodejs_version: "5"
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm install -g gulp eslint
+  - npm install
+
+test_script:
+  - node --version
+  - npm --version
+  - npm test
+
+version: 1.0.{build}
+skip_tags: true
+build: off
