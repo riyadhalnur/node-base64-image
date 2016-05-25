@@ -134,6 +134,11 @@ function typeCheck(done) {
   });
 }
 
+function gitTag() {
+  return gulp.src(['./package.json'])
+    .pipe($.tagVersion());
+}
+
 const watchFiles = ['src/**/*', 'test/**/*', 'package.json', '**/.eslintrc', '.jscsrc'];
 
 // Run the headless unit tests as you make changes.
@@ -216,6 +221,9 @@ gulp.task('coverage', ['lint'], coverage);
 
 // Set up type checking using flow
 gulp.task('flow', typeCheck);
+
+// Tag with version in package.json
+gulp.task('tag', gitTag);
 
 // Set up a livereload environment for our spec runner `test/runner.html`
 gulp.task('test-browser', ['lint', 'clean-tmp'], testBrowser);
