@@ -10,12 +10,20 @@ Download images from remote URLs or use local images and encode/decode them to B
 `npm install node-base64-image --save`  
 
 ### Usage  
-`var base64 = require('node-base64-image');`  
+`var base64 = require('node-base64-image'); // ES5`
+
+`import {encode, decode} from 'node-base64-image'; // ES6`  
+
+### Documentation
+Read the documentation in [DOCUMENTATION](docs/docs.md).  
+
+### Contributing
+Read the [CONTRIBUTING](CONTRIBUTING.md) guide for information.  
 
 ### License  
-Licensed under MIT.
+Licensed under MIT. See [LICENSE](LICENSE) for more information.  
 
 ### Issues  
-Report a bug in the issues.   
+Report a bug in issues.   
 
 Made with love in Dhaka, Bangladesh by [Riyadh Al Nur](https://verticalaxisbd.com)

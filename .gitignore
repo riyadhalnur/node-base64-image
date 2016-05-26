@@ -15,6 +15,7 @@ coverage
 
 # tmp folder
 tmp
+.tmp
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
@@ -27,5 +28,6 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
-*.jpg
-!test/test.jpg
+test.jpg
+
+.github

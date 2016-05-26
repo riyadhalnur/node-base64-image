@@ -11,7 +11,8 @@
     "build": "gulp build",
     "coverage": "gulp coverage",
     "tag": "gulp tag",
-    "prepublish": "npm run build && npm test && npm run tag"
+    "doc": "gulp doc",
+    "prepublish": "npm run build && npm run coverage && npm run tag"
   },
   "repository": {
     "type": "git",
@@ -49,6 +50,7 @@
     "glob": "^6.0.3",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
+    "gulp-documentation": "2.2.0",
     "gulp-eslint": "^2.0.0",
     "gulp-filter": "^3.0.0",
     "gulp-istanbul": "^0.10.3",

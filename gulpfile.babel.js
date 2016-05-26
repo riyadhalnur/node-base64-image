@@ -135,11 +135,19 @@ function typeCheck(done) {
 }
 
 function gitTag() {
+  _registerBabel();
   return gulp.src(['./package.json'])
     .pipe($.tagVersion());
 }
 
-const watchFiles = ['src/**/*', 'test/**/*', 'package.json', '**/.eslintrc', '.jscsrc'];
+function generateDocs() {
+  _registerBabel();
+  return gulp.src('src/node-base64-image.js')
+    .pipe($.documentation({ format: 'md', filename: 'docs.md' }))
+    .pipe(gulp.dest('docs'));
+}
+
+const watchFiles = ['src/**/*', 'test/**/*', 'package.json', '**/.eslintrc'];
 
 // Run the headless unit tests as you make changes.
 function watch() {
@@ -224,6 +232,9 @@ gulp.task('flow', typeCheck);
 
 // Tag with version in package.json
 gulp.task('tag', gitTag);
+
+// Generate documentation
+gulp.task('doc', generateDocs);
 
 // Set up a livereload environment for our spec runner `test/runner.html`
 gulp.task('test-browser', ['lint', 'clean-tmp'], testBrowser);

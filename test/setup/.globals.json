@@ -8,6 +8,7 @@
     "stub": true,
     "useFakeServer": true,
     "useFakeTimers": true,
-    "useFakeXMLHttpRequest": true
+    "useFakeXMLHttpRequest": true,
+    "timeout": 15000
   }
 }
