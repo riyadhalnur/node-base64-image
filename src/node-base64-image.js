@@ -87,3 +87,10 @@ export function decode(imageBuffer: any, options: Object = {filename: 'saved-ima
     return callback(null, 'Image saved successfully to disk!');
   });
 }
+
+const base64 = {
+  encode: encode,
+  decode: decode
+};
+
+export default base64;
