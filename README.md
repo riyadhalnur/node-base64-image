@@ -1,72 +1,29 @@
-[![Build Status](https://travis-ci.org/riyadhalnur/node-base64-image.svg?branch=master)](https://travis-ci.org/riyadhalnur/node-base64-image)  
+[![Build Status](https://travis-ci.org/riyadhalnur/node-base64-image.svg?branch=master)](https://travis-ci.org/riyadhalnur/node-base64-image) [![Coverage Status](https://coveralls.io/repos/github/riyadhalnur/node-base64-image/badge.svg?branch=master)](https://coveralls.io/github/riyadhalnur/node-base64-image?branch=master)
+[![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/github/riyadhalnur/node-base64-image?branch=master&svg=true)](https://ci.appveyor.com/project/riyadhalnur/node-base64-image?branch=master)  
 
 node-base64-image
 =================
 
-Download images from remote URLs or use local images and encode/decode them to base64
+Download images from remote URLs or use local images and encode/decode them to Base64 string or [Buffer](https://nodejs.org/api/buffer.html) object
 
-To install  
+### Installation  
 `npm install node-base64-image --save`  
 
-To run tests  
-`npm test`  
-
 ### Usage  
+`var base64 = require('node-base64-image'); // ES5`
 
-Require the library in your .js file  
-`var base64 = require('node-base64-image');`  
+`import {encode, decode} from 'node-base64-image'; // ES6`  
 
-#### Download and encode an image  
-```
-var options = {string: true};
+### Documentation
+Read the documentation in [DOCUMENTATION](docs/docs.md).  
 
-base64.base64encoder('www.someurl.com/image.jpg', options, function (err, image) {
-    if (err) {
-        console.log(err);
-    }
-    console.log(image);
-});
-```
-
-#### Encode a local image  
-```  
-var path = __dirname + '/../test.jpg',
-          options = {localFile: true, string: true};
-
-base64.base64encoder(path, options, function (err, image) {  
-    if (err) { console.log(err); }  
-    console.log(image);  
-});  
-```
-
-
-##### Parameters  
- - `url` (string) - the url of the image to be downloaded and encoded.
- - `options` (object)
- 	- if `string` is passed is with 'true', the image returned will be a base64 string. Otherwise, the base64 buffer is returned.  
- 	- if `localFile` is passed is with 'true', a local image instead of a remote one will be used  
- - `callback` (function) - the callback will contain the err object and the encoded image object.  
-
-#### Decode and write a base64 encoded image to disk  
-```  
-var options = {filename: 'test'};
-var imageData = new Buffer('/9j/4AAQSkZJRgABAQAAAQABAAD...', 'base64');
-
-base64.base64decoder(imageData, options, function (err, saved) {
-    if (err) { console.log(err); }  
-    console.log(saved);    
-});  
-```  
-
-##### Parameters  
- - `imageData` (buffer) - the base64 image buffer.  
- - `options` (object) - contains the 'filename' property; this will be the written image file.  
- - `callback` (function) - the callback will contain the err object and the 'successful save' string.
+### Contributing
+Read the [CONTRIBUTING](CONTRIBUTING.md) guide for information.  
 
 ### License  
-This library is licensed under the MIT license.  
+Licensed under MIT. See [LICENSE](LICENSE) for more information.  
 
 ### Issues  
-Report a bug in the issues.   
+Report a bug in issues.   
 
-Lovingly crafted in Dhaka, Bangladesh by [Riyadh Al Nur](http://blog.verticalaxisbd.com)
+Made with love in Dhaka, Bangladesh by [Riyadh Al Nur](https://verticalaxisbd.com)

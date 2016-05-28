@@ -1,16 +1,23 @@
 {
   "name": "node-base64-image",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Download images from remote URLs and encode/decode them to base64",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "mocha test/tests.js"
+    "test": "gulp",
+    "lint": "gulp lint",
+    "test-browser": "gulp test-browser",
+    "watch": "gulp watch",
+    "build": "gulp build",
+    "coverage": "gulp coverage",
+    "tag": "gulp tag",
+    "doc": "gulp doc",
+    "prepublish": "npm run build && npm run coverage && npm run tag"
   },
-  "engines": {
-    "node": ">=0.10"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riyadhalnur/node-base64-image.git"
   },
-  "repository": "https://github.com/riyadhalnur/node-base64-image",
-  "homepage": "http://riyadhalnur.github.io/node-base64-image/",
   "keywords": [
     "image",
     "download",
@@ -20,16 +27,58 @@
     "javascript",
     "node"
   ],
-  "bugs": {
-    "url": "https://github.com/riyadhalnur/node-base64-image/issuess"
-  },
-  "author": "Riyadh Al Nur <riyadhalnur@verticalaxisbd.com> (http://blog.verticalaxisbd.com)",
+  "author": "Riyadh Al Nur <riyadhalnur@verticalaxisbd.com> (https://riyadhalnur.com)",
   "license": "MIT",
-  "dependencies": {
-    "request": "^2.51.x"
+  "bugs": {
+    "url": "https://github.com/riyadhalnur/node-base64-image/issues"
   },
+  "homepage": "http://riyadhalnur.github.io/node-base64-image/",
   "devDependencies": {
-    "mocha": "^2.0.x",
-    "should": "^4.3.x"
+    "babel-core": "^6.3.26",
+    "babel-eslint": "6.0.4",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-flow-strip-types": "6.7.0",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "chai": "^3.4.1",
+    "coveralls": "2.11.9",
+    "del": "^2.2.0",
+    "eslint": "2.10.2",
+    "eslint-plugin-flow-vars": "0.4.0",
+    "flow-bin": "0.25.0",
+    "glob": "^6.0.3",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-documentation": "2.2.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-filter": "^3.0.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tag-version": "1.3.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "isparta": "^4.0.0",
+    "json-loader": "^0.5.3",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0",
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^1.12.9",
+    "webpack-stream": "^3.1.0"
+  },
+  "babelBoilerplateOptions": {
+    "entryFileName": "node-base64-image",
+    "mainVarName": "base64"
+  },
+  "dependencies": {
+    "lodash": "4.11.1",
+    "polygoat": "1.1.4",
+    "request": "2.72.0"
   }
 }
