@@ -47,6 +47,10 @@ export function encode(url: string, options: Object = {string: false, local: fal
         return callback(err);
       }
 
+      if (!response.headers['content-type'].match(/image/)) {
+          return callback(new Error('Error retrieving image - Not a Image'));
+      }
+
       if (!body) {
         return callback(new Error('Error retrieving image - Empty Body!'));
       }
