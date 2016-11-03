@@ -40,7 +40,8 @@ function _mocha() {
     .pipe($.mocha({
       reporter: 'spec',
       globals: Object.keys(mochaGlobals.globals),
-      ignoreLeaks: false
+      ignoreLeaks: false,
+      timeout: 10000
     }));
 }
 
