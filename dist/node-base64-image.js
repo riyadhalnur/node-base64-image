@@ -40,7 +40,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param {(string|Object)} Response string or Buffer object
  */
 function encode(url) {
-  var options = arguments.length <= 1 || arguments[1] === undefined ? { string: false, local: false } : arguments[1];
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { string: false, local: false };
   var callback = arguments[2];
   // eslint-disable-line
   if (_lodash2.default.isUndefined(url) || _lodash2.default.isNull(url) || !_lodash2.default.isString(url)) {
@@ -92,8 +92,9 @@ function encode(url) {
  *  @param {fnCallback} callback - Callback function
  *  @return {fnCallback} - Returns the callback
  */
+
 function decode(imageBuffer) {
-  var options = arguments.length <= 1 || arguments[1] === undefined ? { filename: 'saved-image' } : arguments[1];
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { filename: 'saved-image' };
   var callback = arguments[2];
   // eslint-disable-line
   if (!_lodash2.default.isBuffer(imageBuffer)) {
