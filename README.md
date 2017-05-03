@@ -4,6 +4,8 @@
 node-base64-image
 =================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/riyadhalnur/node-base64-image.svg)](https://greenkeeper.io/)
+
 Download images from remote URLs or use local images and encode/decode them to Base64 string or [Buffer](https://nodejs.org/api/buffer.html) object
 
 ### Installation  
