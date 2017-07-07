@@ -1,6 +1,6 @@
 {
   "name": "node-base64-image",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Download images from remote URLs and encode/decode them to base64",
   "main": "dist/node-base64-image.js",
   "scripts": {
