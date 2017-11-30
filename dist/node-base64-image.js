@@ -60,7 +60,8 @@ function encode(url) {
       return callback(null, result);
     });
   } else {
-    (0, _request2.default)({ url: url, encoding: null }, function (err, response, body) {
+    var headers = { "user-agent": options.userAgent || "" };
+    (0, _request2.default)({ url: url, encoding: null, headers: headers, rejectUnauthorized: options.rejectUnauthorized }, function (err, response, body) {
       if (err) {
         return callback(err);
       }
