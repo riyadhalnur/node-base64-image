@@ -42,7 +42,8 @@ export function encode(url: string, options: Object = {string: false, local: fal
       return callback(null, result);
     });
   } else {
-    request({ url: url, encoding: null }, (err, response, body) => {
+    var headers = { "user-agent": options.userAgent || "" };
+    request({ url: url, encoding: null, headers: headers, rejectUnauthorized: options.rejectUnauthorized }, (err, response, body) => {
       if (err) {
         return callback(err);
       }
