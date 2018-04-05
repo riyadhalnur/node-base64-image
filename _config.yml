@@ -1,0 +1,8 @@
+title: Node-base64-image
+description: Download images from remote URLs or use local images and encode/decode them to Base64 string or Buffer object
+google_analytics: UA-57631761-1
+show_downloads: true
+theme: jekyll-theme-hacker
+
+gems:
+  - jekyll-mentions
