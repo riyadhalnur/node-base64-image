@@ -70,6 +70,6 @@
   "dependencies": {
     "lodash": "4.17.5",
     "polygoat": "1.1.4",
-    "request": "2.82.0"
+    "request": "2.84.0"
   }
 }
