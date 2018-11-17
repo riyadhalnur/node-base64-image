@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/riyadhalnur/node-base64-image.svg?branch=master)](https://travis-ci.org/riyadhalnur/node-base64-image) [![Coverage Status](https://coveralls.io/repos/github/riyadhalnur/node-base64-image/badge.svg?branch=master)](https://coveralls.io/github/riyadhalnur/node-base64-image?branch=master)
-[![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/github/riyadhalnur/node-base64-image?branch=master&svg=true)](https://ci.appveyor.com/project/riyadhalnur/node-base64-image?branch=master)  
+[![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/github/riyadhalnur/node-base64-image?branch=master&svg=true)](https://ci.appveyor.com/project/riyadhalnur/node-base64-image?branch=master) [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
 node-base64-image
 =================
