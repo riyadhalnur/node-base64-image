@@ -68,7 +68,7 @@
     "mainVarName": "base64"
   },
   "dependencies": {
-    "lodash": "4.17.5",
+    "lodash": "4.17.11",
     "polygoat": "1.1.4",
     "request": "2.84.0"
   }
