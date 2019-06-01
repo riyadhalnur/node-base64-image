@@ -111,17 +111,17 @@ gulp.task('lint-test', lintTest);
 // Lint this file
 gulp.task('lint-gulpfile', lintGulpfile);
 
-// Lint everything
-gulp.task('lint', ['lint-src', 'lint-test', 'lint-gulpfile']);
-
-// Lint and run our tests
-gulp.task('test', ['lint', 'flow'], test);
-
-// Set up coverage and run tests
-gulp.task('coverage', ['lint'], coverage);
-
 // Set up type checking using flow
 gulp.task('flow', typeCheck);
+
+// Lint everything
+gulp.task('lint', gulp.series('lint-src', 'lint-test', 'lint-gulpfile'));
+
+// Lint and run our tests
+gulp.task('test', gulp.series('lint', 'flow', test));
+
+// Set up coverage and run tests
+gulp.task('coverage', gulp.series('lint', coverage));
 
 // Tag with version in package.json
 gulp.task('tag', gitTag);
@@ -130,4 +130,4 @@ gulp.task('tag', gitTag);
 gulp.task('doc', generateDocs);
 
 // An alias of test
-gulp.task('default', ['test']);
+gulp.task('default', gulp.series('test'));
