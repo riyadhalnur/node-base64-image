@@ -12,7 +12,9 @@
     "coverage": "gulp coverage",
     "tag": "gulp tag",
     "doc": "gulp doc",
-    "prepublish": "npm run build && npm run coverage"
+    "prepublish": "npm run build && npm run coverage",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -70,7 +72,9 @@
   "dependencies": {
     "lodash": "4.17.11",
     "polygoat": "1.1.4",
-    "request": "2.88.0"
+    "request": "2.88.0",
+    "snyk": "^1.192.0"
   },
-  "types": "./types/index.d.ts"
+  "types": "./types/index.d.ts",
+  "snyk": true
 }
