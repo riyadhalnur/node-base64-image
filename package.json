@@ -9,7 +9,6 @@
   },
   "scripts": {
     "test": "jest --coverage",
-    "coverage": "npm run test && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint . --ext .ts",
     "build": "tsc --build"
   },
@@ -40,7 +39,6 @@
     "@types/node": "14.0.5",
     "@typescript-eslint/eslint-plugin": "3.0.0",
     "@typescript-eslint/parser": "3.0.0",
-    "coveralls": "3.1.0",
     "eslint": "7.1.0",
     "jest": "26.0.1",
     "ts-jest": "26.0.0",
