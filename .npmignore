@@ -26,6 +26,11 @@ node_modules
 bower_components
 coverage
 tmp
+.vscode
+.github
 
 # Users Environment Variables
 .lock-wscript
+
+src
+tsconfig.json
