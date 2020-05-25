@@ -29,14 +29,14 @@ export async function encode(url: string, opts: EncodeOptions = { string: false 
       return opts.string ? fileBuf.toString('base64') : fileBuf;
     }
 
-    const response = await axios(url, {
+    const { data, status } = await axios(url, {
       responseType: 'arraybuffer',
       headers: opts.headers,
     });
 
-    if (response.data && response.status >= 200 && response.status < 302) {
-      const buffData = Buffer.from(response.data, 'base64');
-      return opts.string ? buffData.toString('base64') : buffData;
+    if (data && status >= 200 && status < 302) {
+      const buf = Buffer.from(data, 'base64');
+      return opts.string ? buf.toString('base64') : buf;
     }
 
     return Promise.reject(new Error('empty body and/or wrong status code'));

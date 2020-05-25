@@ -9,9 +9,11 @@ Download images from remote URLs or use local images and encode/decode them to B
 `npm i node-base64-image --save`  
 
 ### Usage  
-`const base64 = require('node-base64-image');`
-
-`import {encode, decode} from 'node-base64-image';`  
+```js
+const base64 = require('node-base64-image');
+// or
+import {encode, decode} from 'node-base64-image';
+```   
 
 ### Examples
 ```js
