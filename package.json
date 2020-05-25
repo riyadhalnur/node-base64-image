@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "jest --coverage",
-    "coverage": "npm run test && cat ./tests/coverage/lcov.info | coveralls",
+    "coverage": "npm run test && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint . --ext .ts",
     "build": "tsc --build"
   },
