@@ -17,6 +17,7 @@ import {encode, decode} from 'node-base64-image';
 
 ### Examples
 ```js
+// encoding a jpg to base64
 const url = 'https://example.com/test.jpg';
 const options = {
   string: true,
@@ -25,8 +26,14 @@ const options = {
   }
 };
 
+// writing to file named 'example.jpg'
 const image = await encode(url, options);
 await decode(image, { fname: 'example', ext: 'jpg' });
+
+// writing to a sub-directory
+// after creating a directory called 'photos'
+const image = await encode(url, options);
+await decode(image, { fname: './photos/example', ext: 'jpg' });
 ```  
 
 ### Contributing
