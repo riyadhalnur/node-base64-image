@@ -45,7 +45,7 @@
     "typescript": "3.9.3"
   },
   "dependencies": {
-    "axios": "0.19.2"
+    "axios": "0.21.1"
   },
   "jest": {
     "transform": {
