@@ -21,7 +21,7 @@ describe('Base64 Image Decode/Encode', () => {
     });
 
     it('should download an image and return the Base64 encoded string', async () => {
-      const url = "https://verticalaxisbd.com/img/gopher.webp";
+      const url = 'https://verticalaxisbd.com/img/gopher.webp';
       const options = {string: true};
 
       const image = await encode(url, options);
@@ -29,7 +29,7 @@ describe('Base64 Image Decode/Encode', () => {
     });
 
     it('should download an image and return the Buffer object by default', async () => {
-      const url = "https://verticalaxisbd.com/img/gopher.webp";
+      const url = 'https://verticalaxisbd.com/img/gopher.webp';
       const options = {};
 
       const image = await encode(url, options);
