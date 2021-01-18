@@ -30,4 +30,5 @@ node_modules
 
 dist
 *.d.ts
+test.jpg
 
