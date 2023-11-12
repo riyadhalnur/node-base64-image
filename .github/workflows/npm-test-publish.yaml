@@ -28,8 +28,7 @@ jobs:
       - run: npm test
 
   publish-npm:
-    needs: test
-    if: github.event == 'release' && success('test')
+    if: github.event == 'release'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -44,8 +43,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   publish-gpr:
-    needs: test
-    if: github.event == 'release' && success('test')
+    if: github.event == 'release'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
