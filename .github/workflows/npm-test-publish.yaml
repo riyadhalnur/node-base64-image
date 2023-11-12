@@ -29,7 +29,7 @@ jobs:
 
   publish-npm:
     needs: test
-    if: github.event == 'release'
+    if: github.event == 'release' && success('test')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -45,7 +45,7 @@ jobs:
 
   publish-gpr:
     needs: test
-    if: github.event == 'release'
+    if: github.event == 'release' && success('test')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
