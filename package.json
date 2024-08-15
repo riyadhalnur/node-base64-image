@@ -8,6 +8,7 @@
     "node": ">=18"
   },
   "scripts": {
+    "version": "auto-changelog -p && git add CHANGELOG.md",
     "test": "jest --coverage",
     "lint": "eslint . --ext .ts",
     "build": "tsc --build"
@@ -39,6 +40,7 @@
     "@types/node": "18.15.11",
     "@typescript-eslint/eslint-plugin": "5.58.0",
     "@typescript-eslint/parser": "5.58.0",
+    "auto-changelog": "^2.4.0",
     "eslint": "8.38.0",
     "jest": "29.5.0",
     "ts-jest": "29.1.0",
