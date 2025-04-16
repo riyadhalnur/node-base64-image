@@ -8,6 +8,7 @@ const write = promisify(writeFile);
 export interface EncodeOptions {
   string?: boolean;
   local?: boolean;
+  timeout?: number;
   headers?: {
     [key: string]: string | number;
   }
@@ -18,7 +19,7 @@ export interface DecodeOptions {
   ext: string;
 }
 
-export async function encode(url: string, opts: EncodeOptions = { string: false }): Promise<string | Buffer> {
+export async function encode(url: string, opts: EncodeOptions = { string: false, timeout: 5000 }): Promise<string | Buffer> {
   try {
     if (!url || url === '') {
       return Promise.reject(new Error('URL is a required parameter'));
@@ -32,6 +33,7 @@ export async function encode(url: string, opts: EncodeOptions = { string: false 
     const { data, status } = await axios(url, {
       responseType: 'arraybuffer',
       headers: opts.headers,
+      timeout: opts.timeout,
     });
 
     if (data && status >= 200 && status < 302) {
