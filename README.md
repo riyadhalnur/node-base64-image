@@ -1,21 +1,44 @@
-![Node.js Package](https://github.com/riyadhalnur/node-base64-image/workflows/Node.js%20Package/badge.svg?branch=master)  
 
-node-base64-image
-=================
+![NPM Version](https://img.shields.io/npm/v/node-base64-image)
+![NPM Downloads](https://img.shields.io/npm/dw/node-base64-image)
+# node-base64-image
 
-Download images from remote URLs or use local images and encode/decode them to Base64 string or [Buffer](https://nodejs.org/api/buffer.html) object
+Easily encode images (from URLs or local files) to Base64 strings or Buffers, and decode them back into image files.
 
-### Installation  
-`npm i node-base64-image --save`  
+### Installation
+```
+npm install node-base64-image --save
+```
 
-### Usage  
+Usage
+-----
 ```js
-const base64 = require('node-base64-image');
-// or
-import {encode, decode} from 'node-base64-image';
-```   
+// CommonJS:
+const { encode, decode } = require('node-base64-image');
 
-### Examples
+// ES Modules / TypeScript:
+import { encode, decode } from 'node-base64-image';
+```
+
+EncodeOptions
+---
+| Attribute | Type     | Description                                | Default Value |
+|-----------|----------|--------------------------------------------|---------------|
+| string    | boolean  | If true, returns a base64 string            | false         |
+| local     | boolean  | Set to true to read from a local file       | -             |
+| timeout   | number   | Request timeout in milliseconds             | 5000          |
+| headers   | object   | Optional headers for remote HTTP requests   | -             |
+
+
+DecodeOptions (Required)
+---
+| Attribute | Type   | Description                           | Default Value |
+|-----------|--------|---------------------------------------|---------------|
+| fname     | string | Output filename (without extension)   | -             |
+| ext       | string | File extension (e.g., jpg, png)       | -             |
+
+Examples
+--------
 ```js
 // encoding a remote jpg to base64
 const url = 'https://example.com/test.jpg';
@@ -38,15 +61,15 @@ await decode(image, { fname: 'example', ext: 'jpg' });
 // after creating a directory called 'photos'
 const image = await encode(url, options);
 await decode(image, { fname: './photos/example', ext: 'jpg' });
-```  
+```
 
 ### Contributing
 Read the [CONTRIBUTING](CONTRIBUTING.md) guide for information.  
 
-### License  
+### License
 Licensed under MIT. See [LICENSE](LICENSE) for more information.  
 
-### Issues  
-Report a bug in issues.   
+### Issues
+Report a bug in [issues](https://github.com/riyadhalnur/node-base64-image/issues)
 
-Made with love in Dhaka, Bangladesh by [Riyadh Al Nur](https://verticalaxisbd.com)
+Made with love in Dhaka, Bangladesh by Riyadh Al Nur (https://verticalaxisbd.com)
