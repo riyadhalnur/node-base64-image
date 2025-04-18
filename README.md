@@ -72,4 +72,4 @@ Licensed under MIT. See [LICENSE](LICENSE) for more information.
 ### Issues
 Report a bug in [issues](https://github.com/riyadhalnur/node-base64-image/issues)
 
-Made with love in Dhaka, Bangladesh by Riyadh Al Nur (https://verticalaxisbd.com)
+Made with love in Dhaka, Bangladesh by [Riyadh Al Nur](https://verticalaxisbd.com)
