@@ -1,9 +1,9 @@
-
+![Node.js Package](https://github.com/riyadhalnur/node-base64-image/workflows/Node.js%20Package/badge.svg?branch=master)  
 ![NPM Version](https://img.shields.io/npm/v/node-base64-image)
 ![NPM Downloads](https://img.shields.io/npm/dw/node-base64-image)
 # node-base64-image
 
-Easily encode images (from URLs or local files) to Base64 strings or Buffers, and decode them back into image files.
+Easily encode images (from URLs or local files) to Base64 strings or [Buffer](https://nodejs.org/api/buffer.html) objects, and decode them back into image files.
 
 ### Installation
 ```
