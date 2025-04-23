@@ -1,17 +1,29 @@
 {
   "name": "node-base64-image",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Download images from remote URLs and encode/decode them to base64",
-  "main": "dist/index.js",
-  "types": "index.d.ts",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "require": {
+      "types": "./dist/index.d.cts",
+      "require": "./dist/index.cjs"
+    }
+  },
   "engines": {
     "node": ">=18"
   },
   "scripts": {
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "test": "jest --coverage",
-    "lint": "eslint . --ext .ts",
-    "build": "tsc --build"
+    "lint": "eslint .",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean"
   },
   "repository": {
     "type": "git",
@@ -44,6 +56,7 @@
     "eslint": "^9.25.1",
     "jest": "^29.7.0",
     "ts-jest": "^29.3.2",
+    "tsup": "^8.4.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {
