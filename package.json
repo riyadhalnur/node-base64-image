@@ -1,6 +1,6 @@
 {
   "name": "node-base64-image",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Download images from remote URLs and encode/decode them to base64",
   "type": "module",
   "main": "./dist/index.cjs",
