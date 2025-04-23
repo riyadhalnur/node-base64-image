@@ -22,7 +22,7 @@
   "scripts": {
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "test": "jest --coverage",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint .",
     "build": "tsup src/index.ts --format cjs,esm --dts --clean"
   },
   "repository": {
