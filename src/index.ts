@@ -1,9 +1,5 @@
 import axios from 'axios';
-import { readFile, writeFile } from 'fs';
-import { promisify } from 'util';
-
-const read = promisify(readFile);
-const write = promisify(writeFile);
+import { readFile, writeFile } from 'fs/promises'
 
 export interface EncodeOptions {
   string?: boolean;
@@ -26,7 +22,7 @@ export async function encode(url: string, opts: EncodeOptions = { string: false,
     }
 
     if (opts.local) {
-      const fileBuf = await read(url);
+      const fileBuf = await readFile(url)
       return opts.string ? fileBuf.toString('base64') : fileBuf;
     }
 
@@ -61,7 +57,7 @@ export async function decode(imgBuffer: string | Buffer, opts: Required<DecodeOp
       imgBuffer = Buffer.from(imgBuffer, 'base64');
     }
 
-    await write(`${opts.fname}.${opts.ext}`, imgBuffer, 'base64');
+    await writeFile(`${opts.fname}.${opts.ext}`, imgBuffer, 'base64')
     return 'file written successfully to disk';
   } catch (err) {
     if (err) {
