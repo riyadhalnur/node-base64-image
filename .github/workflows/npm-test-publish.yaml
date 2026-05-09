@@ -17,7 +17,9 @@ jobs:
       matrix:
         node: ['22', '24', '25']
         os: [ubuntu-latest, macOS-latest]
-    name: Node ${{ matrix.node }}
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -32,6 +34,10 @@ jobs:
     if: ${{ github.event_name == 'release' }}
     needs: test
     runs-on: ubuntu-latest
+    name: Publish to npm
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -48,6 +54,7 @@ jobs:
     if: ${{ github.event_name == 'release' }}
     needs: test
     runs-on: ubuntu-latest
+    name: Publish to GitHub Packages
     permissions:
       contents: read
       packages: write
