@@ -30,7 +30,6 @@ jobs:
         uses: github/codeql-action/init@main
         with:
           languages: ${{ matrix.language }}
-          config-file: ./.github/codeql/codeql-config.yml
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@main
