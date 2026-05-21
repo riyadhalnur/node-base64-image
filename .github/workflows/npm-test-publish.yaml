@@ -47,4 +47,4 @@ jobs:
           package-manager-cache: false
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm publish
+      - run: npm stage publish
